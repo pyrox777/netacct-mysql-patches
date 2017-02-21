@@ -1,0 +1,22 @@
+--- netacct-mysql-0.78-orig/src/mysql.c	2005-02-21 11:56:04.000000000 +0100
++++ netacct-mysql-0.78/src/mysql.c	2017-02-16 16:56:50.000000000 +0100
+@@ -24,6 +24,11 @@
+ #ifdef HAVE_MYSQL
+ 
+ #include <mysql.h>
++#include <stdio.h>
++#include <string.h>
++
++extern struct HOST_DATA* GetFirstHost();
++extern struct HOST_DATA* GetNextHostData();
+ 
+ /* 
+  * IN: struct with ip traffic
+@@ -62,7 +67,6 @@
+ 		local_input=(tmpData->nPeerFlag==3)?tmpData->nInTrafic:0;
+ 		local_output=(tmpData->nPeerFlag==3)?tmpData->nOutTrafic:0;
+ 
+-
+ 		strncpy(spyip,intoa(tmpData->ipAddress),16);
+ 
+ 		sprintf(query, "SELECT `id` FROM `%s` WHERE `ip` = '%s' AND `time` = %s", "traffic", spyip, TIME_MASK);

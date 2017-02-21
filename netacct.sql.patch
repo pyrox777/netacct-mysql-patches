@@ -1,0 +1,17 @@
+--- netacct-mysql-0.78-orig/netacct.sql	2005-02-21 11:56:04.000000000 +0100
++++ netacct-mysql-0.78/netacct.sql	2017-02-14 16:46:38.000000000 +0100
+@@ -23,7 +23,7 @@
+   `direct_output` int(20) NOT NULL default '0',
+   `local_input` int(20) NOT NULL default '0',
+   `local_output` int(20) NOT NULL default '0'
+-) TYPE=MyISAM;
++);
+ 
+ CREATE TABLE if not exists `traffic` (
+   `id` int(11) unsigned NOT NULL auto_increment,
+@@ -39,4 +39,4 @@
+   `local_output` int(20) NOT NULL default '0',
+   PRIMARY KEY  (`id`),
+   KEY `ip` (`ip`,`time`)
+-) TYPE=MyISAM;
++);

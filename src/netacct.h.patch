@@ -1,0 +1,19 @@
+--- netacct-mysql-0.78-orig/src/netacct.h	2005-02-21 11:56:04.000000000 +0100
++++ netacct-mysql-0.78/src/netacct.h	2017-02-16 16:59:03.000000000 +0100
+@@ -26,6 +26,8 @@
+ 
+ #include <arpa/inet.h>
+ #include <net/if.h>
++#include <string.h>
++
+ /* #include <netinet/in_systm.h> */
+ /* #include <netinet/ip.h> */
+ #ifdef _LINUX_ 
+@@ -330,3 +332,7 @@
+ pthread_mutex_t pt_lock;
+ pthread_t pt[MAX_INTERFACES];
+ static int interface_number = 0;
++
++extern struct HOST_DATA* GetFirstHost();
++extern struct HOST_DATA* GetNextHostData();
++
