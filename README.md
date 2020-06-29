@@ -1,5 +1,8 @@
 # netacct-mysql-patches
+
 Patches for running netacct-mysql-0.78 on a 64bit system
+
+:warning: This repository is archived, please see [pyrox777/netacct-mysql](https://github.com/pyrox777/netacct-mysql) for a complete setup (including these patches).
 
 ## Source code
 
